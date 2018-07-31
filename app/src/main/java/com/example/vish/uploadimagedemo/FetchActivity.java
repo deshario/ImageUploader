@@ -28,25 +28,25 @@ import java.util.Map;
  * Created by Deshario on 7/22/2017.
  */
 
-public class Fetcher extends AppCompatActivity {
+public class FetchActivity extends AppCompatActivity {
 
     EditText name;
     Button ViewImage;
     String url = null;
     NetworkImageView previewImage;
     ImageLoader imageLoader;
-    String fetch_url = "http://192.168.1.51/deshario/fetch_image.php";
+    String fetch_url = "http://192.168.1.41/deshario/fetch_image.php";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view);
+        setContentView(R.layout.fetch_layout);
 
         previewImage = (NetworkImageView) findViewById(R.id.show_img);
         name = (EditText) findViewById(R.id.img_name);
         ViewImage = (Button) findViewById(R.id.fetch_btn);
 
-        imageLoader = VolleyRequest.getInstance(Fetcher.this).getImageLoader();
+        imageLoader = VolleyRequest.getInstance(FetchActivity.this).getImageLoader();
         ViewImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,7 +90,7 @@ public class Fetcher extends AppCompatActivity {
                     return params;
                 }
             };
-            RequestQueue requestQueue = Volley.newRequestQueue(Fetcher.this);
+            RequestQueue requestQueue = Volley.newRequestQueue(FetchActivity.this);
             requestQueue.add(stringRequest);
     }
 }

@@ -22,14 +22,14 @@ public class MainActivity extends AppCompatActivity {
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,Uploader.class));
+                startActivity(new Intent(MainActivity.this,UploadActivity.class));
             }
         });
 
         btn_get.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,Fetcher.class));
+                startActivity(new Intent(MainActivity.this,FetchActivity.class));
             }
         });
 
